@@ -3,8 +3,7 @@
 The `datatablesassets-rails` gem packages the [jQuery DataTables](http://www.datatables.net/) assets for easy inclusion
 in an Rails application using assets pipeline.
 
-The version of DataTables
-[DataTables version 1.10.12](https://github.com/DataTables/DataTables/tree/1.10.12)
+DataTables version used in the project: [1.10.12](https://github.com/DataTables/DataTables/tree/1.10.12)
 
 ## Installation
 To use this gem you need [jQuery](http://jquery.com/) in your application javascript.
