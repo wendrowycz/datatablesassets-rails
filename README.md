@@ -1,10 +1,13 @@
-# Datatablesassets::Rails
+# datatablesassets-rails [![Gem Version](https://badge.fury.io/rb/datatablesassets-rails.svg)](https://badge.fury.io/rb/datatablesassets-rails)
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/datatablesassets/rails`. To experiment with that code, run `bin/console` for an interactive prompt.
+The `datatablesassets-rails` gem packages the [jQuery DataTables](http://www.datatables.net/) assets for easy inclusion
+in an Rails application using assets pipeline.
 
-TODO: Delete this and the text above, and describe your gem
+## Used Versinion
+[DataTables version 1.10.12](https://github.com/DataTables/DataTables/tree/1.10.12)
 
 ## Installation
+To use this gem you need [jQuery](http://jquery.com/) in your application javascript.
 
 Add this line to your application's Gemfile:
 
@@ -21,19 +24,59 @@ Or install it yourself as:
     $ gem install datatablesassets-rails
 
 ## Usage
+### JavaScript
 
-TODO: Write usage instructions here
+Include the javascript part:
 
-## Development
+For Coffeescript
 
-After checking out the repo, run `bin/setup` to install dependencies. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
+    #= require datatables/jquery.dataTables
 
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+For JavaScript
+
+    //= require datatables/jquery.dataTables
+
+Make sure you add the line after the inclusion of jQuery
+
+### Stylesheets
+
+Include the style part:
+
+    @import "datatables/jquery.dataTables";
+
+## Initialize
+### Example for Bootsrtap
+
+    app/assets/javascript/applicataion.js
+
+```javascript
+
+//= require jquery
+//= require jquery_ujs
+//= require bootstrap-sprockets
+//= require datatables/jquery.dataTables
+//= require datatables/dataTables.bootstrap
+
+$(document).ready(function() {
+    $('table').DataTable();
+});
+
+````
+
+    app/assets/stylesheets/style.scss
+
+```stylesheet
+@import "bootstrap-sprockets";
+@import "datatables/dataTables.bootstrap";
+```
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/datatablesassets-rails. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
-
+1. [Fork it]( https://github.com/wendrowycz/datatablesassets-rails)
+2. Create your feature branch (`git checkout -b my-new-feature`)
+3. Commit your changes (`git commit -am 'Added some feature'`)
+4. Push to the branch (`git push origin my-new-feature`)
+5. Create new Pull Request
 
 ## License
 
